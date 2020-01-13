@@ -1,0 +1,74 @@
+using System;
+
+namespace QuetesLesFonctions
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            float i;
+            float[] operationTable = new float[10];
+            for (i=0; i<10; i--)
+            {
+                while (i<1)
+                {
+                    Console.WriteLine("Write your first operand:");
+                    float firstOperand = Convert.ToSingle(Console.ReadLine().Replace('.',','));
+                    Console.WriteLine("Write your second operand:");
+                    float secondOperand = Convert.ToSingle(Console.ReadLine().Replace('.', ','));
+                    Console.WriteLine("which operation you choose:");
+                    string operation = Console.ReadLine();
+                    if (operation == "add")
+                    {
+                        Console.WriteLine(firstOperand + " + " + secondOperand + " = " + add(firstOperand, secondOperand));
+                    }
+                    else if(operation == "substract")
+                    {
+                        Console.WriteLine(firstOperand + " - " + secondOperand + " = " + substract(firstOperand, secondOperand));
+                    }
+                    else if (operation == "multiply")
+                    {
+                        Console.WriteLine(firstOperand + " x " + secondOperand + " = " + multiply(firstOperand, secondOperand));
+                    }
+                    else if (operation == "divide")
+                    {
+                        Console.WriteLine(firstOperand + " / " + secondOperand + " = " + divide(firstOperand, secondOperand));
+                    }
+                    else if (operation == "modulo")
+                    {
+                        Console.WriteLine(firstOperand + " % " + secondOperand + " = " + modulo(firstOperand, secondOperand));
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error: Unknown operation " + '"' + operation + '"');
+                    }
+                }
+            }
+        }
+
+        public static float add (float firstFloat, float secondFloat)
+        {
+            return firstFloat+secondFloat;
+        }
+
+        public static float substract(float firstFloat, float secondFloat)
+        {
+            return firstFloat-secondFloat;
+        }
+
+        public static float multiply(float firstFloat, float secondFloat)
+        {
+            return firstFloat*secondFloat;
+        }
+
+        public static float divide(float firstFloat, float secondFloat)
+        {
+            return firstFloat/secondFloat;
+        }
+
+        public static float modulo(float firstFloat, float secondFloat)
+        {
+            return firstFloat%secondFloat;
+        }
+    }
+}
